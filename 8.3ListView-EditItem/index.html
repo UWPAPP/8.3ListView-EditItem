@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>_8.3ListView_EditItem</title>
+    <link href="lib/winjs-4.0.1/css/ui-light.css" rel="stylesheet" />
+    <script src="lib/winjs-4.0.1/js/base.js"></script>
+    <script src="lib/winjs-4.0.1/js/ui.js"></script>
+    <link href="css/default.css" rel="stylesheet" />
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</head>
+<body class="win-type-body">
+    <div class="box">
+        <!--定义4个按钮-->
+        <button id="shuffle" class="win-button action secondary">Shuffle tiles</button>
+        <button id="removeSelected" class="win-button action secondary">Remove selected tile</button>
+        <button id="swapSelected" class="win-button action secondary">Swap selected tile</button>
+        <button id="addTile" class="win-button action secondary">Add tile</button>
+        <br />
+
+        <!--listView的模板-->
+        <div class="tileTemplate" data-win-control="WinJS.Binding.Template">
+            <div class="tileTempl">
+                <h6 class="win-h6 counter" data-win-bind="innerText: counter"></h6>
+                <h1 class="letter win-h1" data-win-bind="innerText: letter"></h1>
+            </div>
+        </div>
+
+        <!--listView  默认事件是toggleSelect，会自动打勾，允许多选-->
+        <div id="listView2" class="listBox" data-win-control="WinJS.UI.ListView" data-win-options="{
+        selectionMode: 'multi',
+        tapBehavior: WinJS.UI.TapBehavior.toggleSelect,
+        itemsReorderable: true,
+        layout: { type: WinJS.UI.GridLayout, maxRows: 1 }
+    }"></div>
+    </div>
+
+
+</body>
+</html>
